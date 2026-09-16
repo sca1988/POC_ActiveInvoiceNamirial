@@ -4,7 +4,7 @@
     <DatiTrasmissione>
       <IdTrasmittente>
         <IdPaese>IT</IdPaese>
-        <IdCodice>59502613140</IdCodice>
+        <IdCodice>00701430217</IdCodice>
       </IdTrasmittente>
       <ProgressivoInvio>0000000003</ProgressivoInvio>
       <FormatoTrasmissione>FPR12</FormatoTrasmissione>
@@ -14,9 +14,9 @@
       <DatiAnagrafici>
         <IdFiscaleIVA>
           <IdPaese>IT</IdPaese>
-          <IdCodice>59502613140</IdCodice>
+          <IdCodice>00701430217</IdCodice>
         </IdFiscaleIVA>
-        <CodiceFiscale>59502613140</CodiceFiscale>
+        <CodiceFiscale>00701430217</CodiceFiscale>
         <Anagrafica>
           <Denominazione>AziendaTest1</Denominazione>
         </Anagrafica>

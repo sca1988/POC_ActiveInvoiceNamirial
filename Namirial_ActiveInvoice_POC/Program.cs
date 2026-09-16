@@ -92,7 +92,7 @@ app.MapGet("/SendInvoice", async (string transactionId, CancellationToken ct) =>
             client => client.SendElectronicInvoiceAsync(auth, new SendInvoice()
             {
                 IdTransaction = transactionId,
-                ToSign = false,
+                ToSign = true,
                 Filename = "IT59502613140_0000000003.xml"
             }),
             operationName: nameof(SolutionDOC_HubSoapClient.InsertDraftElectronicInvoiceAsync), ct: ct);
