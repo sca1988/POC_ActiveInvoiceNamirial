@@ -101,4 +101,31 @@ app.MapGet("/SendInvoice", async (string transactionId, CancellationToken ct) =>
     })
     .WithName("SendInvoice");
 
+app.MapGet("/GetEsiti", async (long? idSdi, CancellationToken ct) =>
+    {
+        var clientService = app.Services.GetRequiredService<ActiveInvoiceWsClientFactory>();
+        var auth = clientService.CreateAuth();
+
+       
+
+        var result = await clientService.ExecuteAsync(
+            client => client.GetElectronicInvoiceOutcomesAsync(auth, new ElectronicInvoiceOutcomeFilter()
+            {
+               IdSdi = idSdi,
+               DataFullOutcomes = true
+            }),
+            operationName: nameof(SolutionDOC_HubSoapClient.GetElectronicInvoiceOutcomesAsync), ct: ct);
+
+        // var resultString = result.ElectronicInvoiceOutcomes[0].TipoMessaggio.ToString();
+        // return new
+        // {
+        //     result.ElectronicInvoiceOutcomes[0].TipoMessaggio,
+        //     resultString,
+        //     result.ElectronicInvoiceOutcomes[0].DescrizioneMessaggio,
+        //     result.ElectronicInvoiceOutcomes[0].Descrizione
+        // };
+        return result;
+    })
+    .WithName("GetElectronicInvoiceOutcomesAsync");
+
 app.Run();
